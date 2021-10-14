@@ -18,12 +18,12 @@ app = Flask(__name__)
 # ]
 
 @app.route("/")
-def hello():
+def home():
     return render_template('home.html')
 
-@app.route("/test")
-def test():
-    return render_template('about.html', title='Welcome')
+@app.route("/P#")
+def P():
+    return render_template('app.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
