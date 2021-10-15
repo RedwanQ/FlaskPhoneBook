@@ -7,9 +7,10 @@
 
     <h1>Contacts</h1>
 <ul>
-
-    <li>  {{  members  }} </li>
+{% for member in members %}
+    <li>  {{  member  }} </li>
   
+{% endfor %}
 </ul>
 
 </div>
