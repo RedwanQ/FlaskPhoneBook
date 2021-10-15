@@ -21,7 +21,7 @@
     <!-- Nav -->
     <nav class="navbar navbar-expand-lg navbar-light bg-dark">
         <div class="container-fluid">
-          <a class="navbar-brand text-light" href="#">Navbar</a>
+          <a class="navbar-brand text-light" href="#">Phonebook</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -31,7 +31,7 @@
                 <a class="nav-link active text-light" aria-current="page" href="{{ url_for('home') }}">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-light" href=" {{ url_for('P') }} ">Phonebook</a>
+                <a class="nav-link text-light" href=" {{ url_for('contacts') }} ">Contacts</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link text-light " href="#">Login</a>
@@ -41,8 +41,9 @@
         </div>
       </nav>
 
-
-    {% block content %} {% endblock %}
+      <br>
+    {% block content %} 
+    {% endblock %}
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
