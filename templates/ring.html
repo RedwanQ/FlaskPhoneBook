@@ -1,0 +1,28 @@
+{% extends 'main.html' %}
+
+
+{% block content %}
+
+<div class="container">
+
+    <h1>  Contacts  </h1>
+
+    <br>
+
+    <ul>
+        {% for member in members %}
+
+        <li>
+
+            {{  member  }}
+
+        </li>
+        {% endfor %}
+    </ul>
+
+
+
+</div>
+
+
+{% endblock content %}
