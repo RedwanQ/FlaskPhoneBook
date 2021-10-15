@@ -35,7 +35,7 @@ def contacts():
     phone_number = request.form.get("phone_number")
     members.append(f" {first_name} {last_name} {phone_number} ")
     title = 'Thank you!'
-    return render_template('info.html', title=title, first_name=first_name, last_name=last_name, phone_number=phone_number)
+    return render_template('info.html', members=members, title=title, first_name=first_name, last_name=last_name, phone_number=phone_number)
 
 
 
