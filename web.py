@@ -23,20 +23,34 @@ members = []
 @app.route("/")
 def home():
     return render_template('home.html')
-
-@app.route("/P")
-def P():
-    return render_template('app.html')
+   
 
 @app.route("/contacts", methods=["POST"])
 def contacts():
     first_name = request.form.get("first_name")
     last_name = request.form.get("last_name")
     phone_number = request.form.get("phone_number")
-    members.append(f" {first_name} {last_name} {phone_number} ")
-    title = 'Thank you!'
-    return render_template('info.html', members=members, title=title, first_name=first_name, last_name=last_name, phone_number=phone_number)
+    
+    if not first_name or not last_name or not phone_number:
+        error_statement = "Fill Required Fields"
+        return render_template('home.html', error_statement=error_statement, first_name=first_name,
+        last_name=last_name, 
+        phone_number=phone_number)
 
+    members.append(f" {first_name} {last_name} {phone_number} ")
+
+    title = 'Thank you!'
+    return render_template('info.html', members=members, title=title, first_name=first_name,
+    last_name=last_name, 
+    phone_number=phone_number)
+
+@app.route("/login")
+def login():
+    return render_template('login.html')
+
+@app.route("/register")
+def register():
+    return render_template('register.html')
 
 
 

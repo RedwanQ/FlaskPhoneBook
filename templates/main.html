@@ -28,16 +28,20 @@
           <div class="collapse navbar-collapse " id="navbarNav">
             <ul class="navbar-nav me-auto">
               <li class="nav-item">
-                <a class="nav-link active text-light" aria-current="page" href="{{ url_for('home') }}">Home</a>
+                <a class="nav-link active text-light" aria-current="page" href="/">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-light" href=" {{ url_for('contacts') }} ">Contacts</a>
+                <a class="nav-link text-light" href="/contacts">Contacts</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link text-light " href="#">Login</a>
-              </li>
+              
             </ul>
           </div>
+          <!-- Nav right -->
+              <div class="navbar-nav">
+                <a class="nav-item nav-link text-light" href="/login">Login</a>
+                <a class="nav-item nav-link text-light" href="/register">Register</a>
+              </div>
+
         </div>
       </nav>
 

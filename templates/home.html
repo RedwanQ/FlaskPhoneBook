@@ -1,4 +1,4 @@
-{% extends 'layout.html' %}
+{% extends 'main.html' %}
 
 {% block content %}
   <!-- {% for post in posts %}
@@ -8,30 +8,41 @@
   {% endfor  %} -->
   
   <div class="container">
+    
+  {% if error_statement %}  
+
+  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    {{ error_statement }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+    
+  {% endif %}
     <h1>Welcome!</h1>
   </div>
 
+  <br/><br/>
+
   <form  action="/contacts"  method="POST" class="container">
     <div class="mb-3">
-      
-      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-      placeholder="First Name" name="first_name">
-      
+        
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+        placeholder="First Name" name="first_name" value="{{ first_name }}" >
+        
     </div>
-  
+    
     <div class="mb-3">
-      
-      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-      placeholder="Last Name" name="last_name">
+        
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+        placeholder="Last Name" name="last_name" value="{{ last_name }}" >
     </div>
     <div class="mb-3">
-      
-      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-      placeholder="Phone Number" name="phone_number">
+        
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+        placeholder="Phone Number" name="phone_number" value="{{ phone_number }}"  >
     </div>
-   
+    
     
     <button type="text" class="btn btn-primary">Submit</button>
-  </form>
+</form>
 
 {% endblock content %}
